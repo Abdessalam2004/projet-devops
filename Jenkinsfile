@@ -20,4 +20,16 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "Build #${BUILD_NUMBER} réussi"
+            }
+            failure {
+                echo "Build #${BUILD_NUMBER} échoué"
+            }
+            always {
+                cleanWs() // nettoyer le workspace après chaque build
+            }
+        }
+    }
 }
