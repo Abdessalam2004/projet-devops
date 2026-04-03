@@ -29,13 +29,12 @@ pipeline {
     post {
         success {
             echo "Build #${BUILD_NUMBER} réussi"
-            }
-            failure {
-                echo "Build #${BUILD_NUMBER} échoué"
-            }
-            always {
-                cleanWs()
-            }
+        }
+        failure {
+            echo "Build #${BUILD_NUMBER} échoué"
+        }
+        always {
+            cleanWs()
         }
     }
 }
