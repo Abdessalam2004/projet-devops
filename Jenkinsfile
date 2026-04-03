@@ -1,12 +1,12 @@
 pipeline {
     agent any 
 
-    stages {
-        options {
-            // This stops the "automatic" checkout you are seeing
-            skipDefaultCheckout()
-        }
+    options {
+        // This stops the "automatic" checkout you are seeing
+        skipDefaultCheckout()
+    }
 
+    stages {
         stage('Build') {
             steps {
                 echo 'Building application...'
