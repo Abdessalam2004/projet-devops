@@ -2,6 +2,10 @@ pipeline {
     agent any 
 
     stages {
+        options {
+            // This stops the "automatic" checkout you are seeing
+            skipDefaultCheckout()
+        }
 
         stage('Build') {
             steps {
