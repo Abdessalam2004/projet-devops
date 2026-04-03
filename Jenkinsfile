@@ -2,6 +2,12 @@ pipeline {
     agent any 
 
     stages {
+        stage('Checkout') {
+            steps {
+                echo 'Polling application...'
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building application...'
@@ -28,7 +34,7 @@ pipeline {
                 echo "Build #${BUILD_NUMBER} échoué"
             }
             always {
-                cleanWs() // nettoyer le workspace après chaque build
+                cleanWs()
             }
         }
     }
