@@ -7,6 +7,13 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checkout repo...'
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building application...'
